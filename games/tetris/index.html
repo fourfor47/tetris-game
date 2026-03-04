@@ -67,6 +67,13 @@
       gap: 8px;
       max-width: 200px;
     }
+    
+    /* 始终显示控制按钮，无论屏幕大小 */
+    @media (min-width: 500px) {
+      .controls {
+        display: grid !important;
+      }
+    }
     .btn {
       background: linear-gradient(145deg, #4CAF50, #45a049);
       color: white;
@@ -114,11 +121,7 @@
     .game-over p {
       margin-bottom: 10px;
     }
-    @media (min-width: 500px) {
-      .controls {
-        display: none;
-      }
-    }
+    /* 桌面端也显示控制按钮，方便鼠标操作 */
   </style>
 </head>
 <body>
@@ -453,8 +456,13 @@
     // 初始化游戏
     init();
     
+    console.log('✅ Tetris initialized');
+    
     // 自动开始游戏（延时确保 DOM 加载完成）
-    setTimeout(startGame, 500);
+    setTimeout(() => {
+      console.log('🚀 Starting game...');
+      startGame();
+    }, 500);
   </script>
 </body>
 </html>
