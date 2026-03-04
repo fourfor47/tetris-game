@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的游戏 - 自动生成</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      color: #eee;
+    }
+    #game-container {
+      margin: 20px auto;
+      border: 3px solid #4a4a6a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      background: #2a2a4a;
+      border-radius: 8px;
+    }
+    .btn {
+      background: #4a4a8a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+    .btn:hover {
+      background: #5a5a9a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎮 我的游戏</h1>
+    <div id="game-container"></div>
+    <div class="status">
+      <p>状态：<span id="status">准备中...</span></p>
+      <p>得分：<span id="score">0</span></p>
+      <button class="btn" onclick="runAutomation()">运行自动化</button>
+      <button class="btn" onclick="resetGame()">重置游戏</button>
+    </div>
+  </div>
+
+  <script>
+    let gameInstance = null;
+
+    function runAutomation() {
+      document.getElementById('status').textContent = '运行中...';
+      fetch('/api/run-automation')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('status').textContent = '完成！';
+          console.log(data);
+        })
+        .catch(err => {
+          document.getElementById('status').textContent = '错误：' + err.message;
+        });
+    }
+
+    function resetGame() {
+      location.reload();
+    }
+
+    // 简单的游戏循环示例
+    function initGame() {
+      console.log('游戏初始化');
+      document.getElementById('status').textContent = '就绪';
+    }
+
+    initGame();
+  </script>
+</body>
+</html>

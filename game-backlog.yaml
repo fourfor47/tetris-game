@@ -1,0 +1,79 @@
+# 游戏开发 Backlog
+# 格式：YAML
+# 说明：按优先级排序的游戏功能列表
+
+tasks:
+  - id: "feat-001"
+    title: "玩家移动系统"
+    description: "实现玩家的 WASD/箭头键移动功能"
+    priority: 1  # 1=最高，5=最低
+    status: "todo"  # todo, in-progress, done
+    type: "feature"  # feature, bug, enhancement
+    files:
+      - "src/player.js"
+      - "src/input.js"
+    created: "2026-03-04"
+    estimated_hours: 2
+
+  - id: "feat-002"
+    title: "碰撞检测"
+    description: "实现玩家与障碍物、道具的碰撞检测"
+    priority: 2
+    status: "todo"
+    type: "feature"
+    files:
+      - "src/collision.js"
+      - "src/physics.js"
+    created: "2026-03-04"
+    estimated_hours: 3
+
+  - id: "feat-003"
+    title: "得分系统"
+    description: "实现得分计算和显示"
+    priority: 3
+    status: "todo"
+    type: "feature"
+    files:
+      - "src/score.js"
+      - "src/ui.js"
+    created: "2026-03-04"
+    estimated_hours: 1.5
+
+  - id: "bug-001"
+    title: "修复渲染延迟"
+    description: "游戏画面偶发卡顿"
+    priority: 1
+    status: "done"
+    type: "bug"
+    files:
+      - "src/renderer.js"
+    created: "2026-03-04"
+    estimated_hours: 2
+
+  - id: "enh-001"
+    title: "添加音效"
+    description: "实现背景音乐和音效系统"
+    priority: 4
+    status: "todo"
+    type: "enhancement"
+    files:
+      - "src/audio.js"
+    created: "2026-03-04"
+    estimated_hours: 2.5
+
+# 游戏配置
+game_config:
+  name: "我的游戏"
+  engine: "phaser"  # phaser, unity, godot
+  version: "0.1.0"
+  target_fps: 60
+  resolution:
+    width: 800
+    height: 600
+
+# 自动化规则
+automation_rules:
+  bugs_first: true  # Bug 优先修复
+  auto_commit: true  # 自动提交
+  auto_test: true   # 自动测试
+  max_tasks_per_session: 3  # 每次会话最多完成的任务数

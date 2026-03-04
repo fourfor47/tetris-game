@@ -1,0 +1,37 @@
+{
+  "version": "1.1.0",
+  "lastUpdate": "2026-03-04",
+  "games": [
+    {
+      "id": "breakout",
+      "name": "打砖块",
+      "description": "经典打砖块游戏",
+      "folder": "games/breakout",
+      "status": "completed",
+      "version": "1.0.0",
+      "createdAt": "2026-03-04",
+      "features": ["打砖块", "道具系统", "计分"]
+    },
+    {
+      "id": "snake",
+      "name": "贪吃蛇",
+      "description": "经典贪吃蛇游戏",
+      "folder": "games/snake",
+      "status": "completed",
+      "version": "1.0.0",
+      "createdAt": "2026-03-04",
+      "features": ["贪吃蛇", "计分", "手机适配"]
+    },
+    {
+      "id": "tetris",
+      "name": "俄罗斯方块",
+      "description": "经典俄罗斯方块游戏",
+      "folder": "games/tetris",
+      "status": "completed",
+      "version": "1.0.0",
+      "createdAt": "2026-03-04",
+      "features": ["俄罗斯方块", "旋转", "消除", "计分", "等级", "手机适配"]
+    }
+  ],
+  "totalGames": 3
+}
