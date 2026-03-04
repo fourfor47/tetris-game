@@ -452,6 +452,9 @@
 
     // 初始化游戏
     init();
+    
+    // 自动开始游戏（延时确保 DOM 加载完成）
+    setTimeout(startGame, 500);
   </script>
 </body>
 </html>
